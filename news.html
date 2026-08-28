@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>News — Patrícia Schmidtová</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg:         #fdf5f5;
+  --bg-alt:     #f9eeee;
+  --rose:       #c06070;
+  --rose-dark:  #8b3a3a;
+  --rose-light: #f0d8d8;
+  --border:     #e8d5d5;
+  --text:       #2a1010;
+  --text-mid:   #4a3535;
+  --text-light: #8a6060;
+  --max:        920px;
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Barlow', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Nav */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(253,245,245,0.93);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+  max-width: var(--max); margin: 0 auto;
+  padding: 0 40px; height: 60px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-name {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-size: 17px; font-weight: 600; color: var(--text);
+  text-decoration: none; letter-spacing: -0.01em;
+}
+.nav-links { display: flex; gap: 2px; align-items: center; }
+.nav-links a {
+  text-decoration: none;
+  font-family: 'Barlow', sans-serif;
+  font-size: 14px; font-weight: 400; color: var(--text-mid);
+  padding: 6px 14px; border-radius: 4px;
+  transition: background .15s, color .15s;
+}
+.nav-links a:hover { background: var(--rose-light); color: var(--rose-dark); }
+.nav-links a.active { color: var(--rose-dark); font-weight: 500; }
+.nav-blog { font-size: 14px; color: var(--text-light); padding: 6px 14px; }
+
+/* Footer */
+footer { border-top: 1px solid var(--border); background: var(--bg-alt); }
+.footer-inner {
+  max-width: var(--max); margin: 0 auto;
+  padding: 28px 40px;
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 12px;
+}
+.footer-name {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-size: 14px; font-weight: 600; color: var(--text-mid);
+}
+.footer-links { display: flex; gap: 20px; }
+.footer-links a {
+  text-decoration: none; font-size: 13px; color: var(--text-light);
+  transition: color .15s;
+}
+.footer-links a:hover { color: var(--rose); }
+.footer-copy { font-size: 12px; color: var(--text-light); width: 100%; }
+
+@media (max-width: 680px) {
+  .nav-inner { padding: 0 20px; }
+  .nav-links a, .nav-blog { padding: 6px 9px; font-size: 13px; }
+}
+
+
+.news-page { max-width: var(--max); margin: 0 auto; padding: 64px 40px; }
+.page-title {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-size: 32px; font-weight: 600; letter-spacing: -0.01em;
+  color: var(--text); margin-bottom: 48px;
+}
+.news-list { display: flex; flex-direction: column; }
+.news-item {
+  display: grid; grid-template-columns: 110px 1fr;
+  gap: 28px; padding: 22px 0;
+  border-bottom: 1px solid var(--rose-light);
+  align-items: baseline;
+}
+.news-item:first-child { padding-top: 0; }
+.news-item:last-child { border-bottom: none; }
+.news-date {
+  font-family: 'Barlow', sans-serif; font-size: 12px;
+  font-weight: 600; letter-spacing: .06em;
+  color: var(--rose); text-transform: uppercase; padding-top: 1px;
+}
+.news-text { font-size: 15px; color: var(--text-mid); line-height: 1.65; }
+.news-text a { color: var(--rose-dark); }
+.news-text strong { color: var(--text); font-weight: 500; }
+@media (max-width: 680px) {
+  .news-page { padding: 40px 20px; }
+  .news-item { grid-template-columns: 1fr; gap: 6px; }
+}
+
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-name" href="index.html">Patrícia Schmidtová</a>
+    <div class="nav-links">
+      <a href="index.html">About</a>
+      <a href="publications.html">Publications</a>
+      <a href="news.html" class="active">News</a>
+      <a href="Schmidtova_CV.pdf">CV</a>
+      <!-- <span class="nav-blog">Talks</span> -->
+      <span class="nav-blog">Blog</span>
+    </div>
+  </div>
+</nav>
+
+<div class="news-page">
+  <h1 class="page-title">News</h1>
+  <div class="news-list">
+
+    <div class="news-item">
+      <div class="news-date">2027</div>
+      <div class="news-text"><strong>Co-chair</strong> of the EACL 2027 Student Research Workshop.</div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-date">2026</div>
+      <div class="news-text">Co-organising the <strong>GEM Workshop</strong> at ACL 2026.</div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-date">2025–2026</div>
+      <div class="news-text">Co-organising the <strong>Workshop for Young Researchers in NLG</strong> (YNLG) at INLG 2025 and INLG 2026.</div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-date">2025</div>
+      <div class="news-text">Elected <strong>student member of the ACL SIGGEN Board</strong> (2025–2026). Co-founded the first YNLG workshop for young NLG researchers.</div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-date">2025</div>
+      <div class="news-text">Visiting researcher at <strong>University of Bonn</strong>, funded by the <strong>Lamarr Stipendium</strong>, exploring interpretability-inspired hallucination detection across languages.</div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-date">2024</div>
+      <div class="news-text">Data Science Intern at <strong>Trivago</strong>, designing an evaluation pipeline for LLM-generated summaries.</div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-date">2024</div>
+      <div class="news-text">Received the <strong>Best Evaluation Paper Award</strong> at INLG 2024 for the NLG automatic metrics survey.</div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-date">2024</div>
+      <div class="news-text">Received the <strong>Best Paper Award</strong> at EACL 2024 for <em>Leak, Cheat, Repeat</em> on data contamination in closed-source LLMs.</div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-date">2023</div>
+      <div class="news-text">Junior Researcher at the <strong>JSALT Workshop</strong>, leading data and augmentation efforts on the "Automatic Design of Conversational Models from Human Dialogue" team.</div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-date">2024</div>
+      <div class="news-text">Co-organised the <strong>Practical Data2Text Workshop</strong> at INLG 2024.</div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-date">2023</div>
+      <div class="news-text">Co-organised the <strong>Young Researchers' Roundtable on Spoken Dialogue Systems</strong> (YRRSDS) at SIGDIAL + INLG 2023.</div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-name">Patrícia Schmidtová</div>
+    <div class="footer-links">
+      <a href="https://scholar.google.com/citations?user=XApspCQAAAAJ&hl=en" target="_blank">Scholar</a>
+      <a href="https://github.com/patuchen" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/patricia-schmidtova/" target="_blank">LinkedIn</a>
+      <a href="#" id="footer-email">Email</a>
+    </div>
+  </div>
+</footer>
+<script>(function(){var e=document.getElementById('footer-email');var u='patricia.schmidtova',d='gmail.com';e.href='mailto:'+u+'@'+d;})();</script>
+</body>
+</html>

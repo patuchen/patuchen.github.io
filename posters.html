@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Posters — Patrícia Schmidtová</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg:         #fdf5f5;
+  --bg-alt:     #f9eeee;
+  --rose:       #c06070;
+  --rose-dark:  #8b3a3a;
+  --rose-light: #f0d8d8;
+  --border:     #e8d5d5;
+  --text:       #2a1010;
+  --text-mid:   #4a3535;
+  --text-light: #8a6060;
+  --max:        920px;
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Barlow', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Nav */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(253,245,245,0.93);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+  max-width: var(--max); margin: 0 auto;
+  padding: 0 40px; height: 60px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-name {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-size: 17px; font-weight: 600; color: var(--text);
+  text-decoration: none; letter-spacing: -0.01em;
+}
+.nav-links { display: flex; gap: 2px; align-items: center; }
+.nav-links a {
+  text-decoration: none;
+  font-family: 'Barlow', sans-serif;
+  font-size: 14px; font-weight: 400; color: var(--text-mid);
+  padding: 6px 14px; border-radius: 4px;
+  transition: background .15s, color .15s;
+}
+.nav-links a:hover { background: var(--rose-light); color: var(--rose-dark); }
+.nav-links a.active { color: var(--rose-dark); font-weight: 500; }
+.nav-blog { font-size: 14px; color: var(--text-light); padding: 6px 14px; }
+
+/* Footer */
+footer { border-top: 1px solid var(--border); background: var(--bg-alt); }
+.footer-inner {
+  max-width: var(--max); margin: 0 auto;
+  padding: 28px 40px;
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 12px;
+}
+.footer-name {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-size: 14px; font-weight: 600; color: var(--text-mid);
+}
+.footer-links { display: flex; gap: 20px; }
+.footer-links a {
+  text-decoration: none; font-size: 13px; color: var(--text-light);
+  transition: color .15s;
+}
+.footer-links a:hover { color: var(--rose); }
+
+@media (max-width: 680px) {
+  .nav-inner { padding: 0 20px; }
+  .nav-links a, .nav-blog { padding: 6px 9px; font-size: 13px; }
+}
+
+/* Page */
+.posters-page { max-width: var(--max); margin: 0 auto; padding: 64px 40px; }
+.page-title {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-size: 32px; font-weight: 600; letter-spacing: -0.01em;
+  color: var(--text); margin-bottom: 16px;
+}
+.page-intro {
+  font-size: 15px; font-weight: 300; font-style: italic;
+  color: var(--text-mid); margin-bottom: 56px; line-height: 1.7;
+}
+.page-intro a { color: var(--rose-dark); text-decoration: none; }
+.page-intro a:hover { text-decoration: underline; }
+
+/* Poster grid */
+.poster-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+.poster-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: box-shadow .2s;
+}
+.poster-card:hover { box-shadow: 0 4px 20px rgba(43,16,16,.08); }
+.poster-img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  object-position: top;
+  background: var(--rose-light);
+  cursor: pointer;
+}
+.poster-img-placeholder {
+  width: 100%;
+  aspect-ratio: 3/4;
+  background: var(--rose-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  color: var(--text-light);
+  font-style: italic;
+}
+.poster-meta {
+  padding: 18px 20px;
+  border-top: 1px solid var(--border);
+}
+.poster-title {
+  font-size: 14px; font-weight: 500; color: var(--text);
+  line-height: 1.5; margin-bottom: 5px;
+}
+.poster-venue {
+  font-size: 12px; font-style: italic; color: var(--text-light);
+}
+.poster-link {
+  display: inline-block; margin-top: 10px;
+  font-size: 12px; color: var(--rose-dark);
+  text-decoration: none;
+}
+.poster-link:hover { text-decoration: underline; }
+
+/* Lightbox */
+.lightbox {
+  display: none; position: fixed; inset: 0; z-index: 500;
+  background: rgba(20,8,8,.85);
+  align-items: center; justify-content: center;
+  cursor: zoom-out;
+}
+.lightbox.open { display: flex; }
+.lightbox img {
+  max-height: 92vh; max-width: 90vw;
+  border-radius: 4px;
+  box-shadow: 0 8px 48px rgba(0,0,0,.5);
+  cursor: default;
+}
+.lightbox-close {
+  position: absolute; top: 20px; right: 28px;
+  font-size: 28px; color: #fff; cursor: pointer;
+  background: none; border: none; line-height: 1;
+  opacity: .7;
+}
+.lightbox-close:hover { opacity: 1; }
+
+@media (max-width: 680px) {
+  .posters-page { padding: 40px 20px; }
+  .poster-grid { grid-template-columns: 1fr; gap: 24px; }
+}
+
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-name" href="index.html">Patrícia Schmidtová</a>
+    <div class="nav-links">
+      <a href="index.html">About</a>
+      <a href="publications.html">Publications</a>
+      <a href="news.html">News</a>
+      <a href="Schmidtova_CV.pdf">CV</a>
+      <!-- <span class="nav-blog">Talks</span> -->
+      <span class="nav-blog">Blog</span>
+    </div>
+  </div>
+</nav>
+
+<div class="posters-page">
+  <h1 class="page-title">Posters</h1>
+  <p class="page-intro">
+    I used to make template posters, but once <a href="https://vilda.net/">Vilém</a> convinced me to make fun posters, I just could not go back.
+  </p>
+
+  <div class="poster-grid">
+
+    <!-- Add poster cards below. Template:
+    <div class="poster-card">
+      <img class="poster-img" src="posters/your-poster.pdf" alt="Poster for Your Paper Title" onclick="openLightbox(this.src)">
+      <div class="poster-meta">
+        <div class="poster-title">Your Paper Title</div>
+        <div class="poster-venue">Conference Name, Year</div>
+        <a class="poster-link" href="https://..." target="_blank">↗ Paper</a>
+      </div>
+    </div>
+    -->
+
+  </div>
+</div>
+
+<!-- Lightbox for full-size viewing -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">×</button>
+  <img id="lightbox-img" src="" alt="" onclick="event.stopPropagation()">
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-name">Patrícia Schmidtová</div>
+    <div class="footer-links">
+      <a href="https://scholar.google.com/citations?user=XApspCQAAAAJ&hl=en" target="_blank">Scholar</a>
+      <a href="https://github.com/patuchen" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/patricia-schmidtova/" target="_blank">LinkedIn</a>
+      <a href="#" id="footer-email">Email</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+function openLightbox(src) {
+  document.getElementById('lightbox-img').src = src;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeLightbox();
+});
+(function(){var e=document.getElementById('footer-email');var u='patricia.schmidtova',d='gmail.com';e.href='mailto:'+u+'@'+d;})();
+</script>
+</body>
+</html>

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Publications — Patrícia Schmidtová</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg:         #fdf5f5;
+  --bg-alt:     #f9eeee;
+  --rose:       #c06070;
+  --rose-dark:  #8b3a3a;
+  --rose-light: #f0d8d8;
+  --border:     #e8d5d5;
+  --text:       #2a1010;
+  --text-mid:   #4a3535;
+  --text-light: #8a6060;
+  --max:        920px;
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Barlow', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Nav */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(253,245,245,0.93);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+  max-width: var(--max); margin: 0 auto;
+  padding: 0 40px; height: 60px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-name {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-size: 17px; font-weight: 600; color: var(--text);
+  text-decoration: none; letter-spacing: -0.01em;
+}
+.nav-links { display: flex; gap: 2px; align-items: center; }
+.nav-links a {
+  text-decoration: none;
+  font-family: 'Barlow', sans-serif;
+  font-size: 14px; font-weight: 400; color: var(--text-mid);
+  padding: 6px 14px; border-radius: 4px;
+  transition: background .15s, color .15s;
+}
+.nav-links a:hover { background: var(--rose-light); color: var(--rose-dark); }
+.nav-links a.active { color: var(--rose-dark); font-weight: 500; }
+.nav-blog { font-size: 14px; color: var(--text-light); padding: 6px 14px; }
+
+/* Footer */
+footer { border-top: 1px solid var(--border); background: var(--bg-alt); }
+.footer-inner {
+  max-width: var(--max); margin: 0 auto;
+  padding: 28px 40px;
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 12px;
+}
+.footer-name {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-size: 14px; font-weight: 600; color: var(--text-mid);
+}
+.footer-links { display: flex; gap: 20px; }
+.footer-links a {
+  text-decoration: none; font-size: 13px; color: var(--text-light);
+  transition: color .15s;
+}
+.footer-links a:hover { color: var(--rose); }
+.footer-copy { font-size: 12px; color: var(--text-light); width: 100%; }
+
+@media (max-width: 680px) {
+  .nav-inner { padding: 0 20px; }
+  .nav-links a, .nav-blog { padding: 6px 9px; font-size: 13px; }
+}
+
+
+.pub-page { max-width: var(--max); margin: 0 auto; padding: 64px 40px; }
+.page-title {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-size: 32px; font-weight: 600; letter-spacing: -0.01em;
+  color: var(--text); margin-bottom: 48px;
+}
+.year-group { margin-bottom: 48px; }
+.year-label {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-size: 13px; font-weight: 600; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--rose);
+  margin-bottom: 20px; padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+.pub {
+  margin-bottom: 24px; padding-bottom: 24px;
+  border-bottom: 1px solid var(--rose-light);
+}
+.pub:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.pub-title {
+  font-size: 15px; font-weight: 500; color: var(--text);
+  line-height: 1.5; margin-bottom: 5px;
+}
+.pub-title a { color: inherit; text-decoration: none; }
+.pub-title a:hover { color: var(--rose); }
+.pub-badge {
+  display: inline-block; font-size: 10px; font-weight: 600;
+  letter-spacing: .06em; text-transform: uppercase;
+  background: var(--rose); color: #fff;
+  padding: 2px 8px; border-radius: 3px;
+  margin-left: 8px; vertical-align: middle; white-space: nowrap;
+}
+.pub-authors { font-size: 13px; color: var(--text-light); line-height: 1.55; margin-bottom: 3px; }
+.pub-authors strong { color: var(--text-mid); font-weight: 500; }
+.pub-venue { font-size: 13px; font-style: italic; color: var(--text-light); }
+.scholar-link { margin-top: 40px; font-size: 13px; color: var(--text-light); }
+.scholar-link a { color: var(--rose-dark); }
+@media (max-width: 680px) {
+  .pub-page { padding: 40px 20px; }
+}
+
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-name" href="index.html">Patrícia Schmidtová</a>
+    <div class="nav-links">
+      <a href="index.html">About</a>
+      <a href="publications.html" class="active">Publications</a>
+      <a href="news.html">News</a>
+      <a href="Schmidtova_CV.pdf">CV</a>
+      <!-- <span class="nav-blog">Talks</span> -->
+      <span class="nav-blog">Blog</span>
+    </div>
+  </div>
+</nav>
+
+<div class="pub-page">
+  <h1 class="page-title">Publications</h1>
+  <p style="margin-top:-32px; margin-bottom:48px; font-size:14px; color:var(--text-light);">Some of these also have <a href="posters.html" style="color:var(--rose-dark);">posters</a>.</p>
+
+  <div class="year-group">
+    <div class="year-label">2026</div>
+
+    <div class="pub">
+      <div class="pub-title">
+        <a href="https://scholar.google.com/citations?user=XApspCQAAAAJ" target="_blank">LLMs as Span Annotators: A Comparative Study of LLMs and Humans</a>
+      </div>
+      <div class="pub-authors">Z. Kasner, V. Zouhar, <strong>P. Schmidtová</strong>, I. Kartáč, K. Onderková, O. Plátek</div>
+      <div class="pub-venue">First Workshop on Multilingual Multicultural Evaluation @ EACL 2026</div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title">
+        <a href="https://scholar.google.com/citations?user=XApspCQAAAAJ" target="_blank">Justify Your Prompts!</a>
+      </div>
+      <div class="pub-authors">E. Calò, D.M. Howcroft, L. Leppänen, S. Mahamood, S. Mille, <strong>P. Schmidtová</strong>, E. van Miltenburg</div>
+      <div class="pub-venue">Computational Linguistics, 2026</div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title">
+        <a href="https://scholar.google.com/citations?user=XApspCQAAAAJ" target="_blank">How Important is &#8216;Perfect&#8217; English for Machine Translation Prompts?</a>
+      </div>
+      <div class="pub-authors"><strong>P. Schmidtová</strong>, N. Bafna, S. Aycock, G. Vico, W. Kamzela, K. Hämmerl, V. Zouhar</div>
+      <div class="pub-venue">Findings of EACL 2026, pp. 760–777</div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title">
+        <a href="https://scholar.google.com/citations?user=XApspCQAAAAJ" target="_blank">HotelCheckSpan: A Benchmark Dataset for LLM Faithfulness</a>
+      </div>
+      <div class="pub-authors"><strong>P. Schmidtová</strong>, O. Dušek, S. Mahamood</div>
+      <div class="pub-venue">LREC-COLING 2026</div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title">
+        <a href="https://scholar.google.com/citations?user=XApspCQAAAAJ" target="_blank">Never Truly Out of Fashion: A Retrospective Look at Evaluation in NLG</a>
+      </div>
+      <div class="pub-authors"><strong>P. Schmidtová</strong>, S. Mahamood, O. Dušek</div>
+      <div class="pub-venue">1st Symposium on Natural Language Generation Evaluations, 2026</div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title">
+        <a href="https://scholar.google.com/citations?user=XApspCQAAAAJ" target="_blank">Hearing to Translate: The Effectiveness of Speech Modality Integration into LLMs</a>
+      </div>
+      <div class="pub-authors">S. Papi, J.G. Gilabert, Z. Hopton, V. Zouhar, C. Escolano, G.I. Gállego, J. Iranzo-Sánchez, A. Kim, D. Macháček, <strong>P. Schmidtová</strong>, M. Züfle</div>
+      <div class="pub-venue">Transactions of the Association for Computational Linguistics (TACL), 2026</div>
+    </div>
+  </div>
+
+  <div class="year-group">
+    <div class="year-label">2025</div>
+
+    <div class="pub">
+      <div class="pub-title">
+        <a href="https://scholar.google.com/citations?user=XApspCQAAAAJ" target="_blank">Do My Eyes Deceive Me? A Survey of Human Evaluations of Hallucinations in NLG</a>
+      </div>
+      <div class="pub-authors"><strong>P. Schmidtová</strong>, E. Calò, S. Balloccu, D. Gkatzia, R. Huidrom, M. Lango, F. Same, V. Zouhar, S. Mahamood, O. Dušek</div>
+      <div class="pub-venue">INLG 2025</div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title">
+        <a href="https://scholar.google.com/citations?user=XApspCQAAAAJ" target="_blank">Real-World Summarization: When Evaluation Reaches its Limits</a>
+      </div>
+      <div class="pub-authors"><strong>P. Schmidtová</strong>, O. Dušek, S. Mahamood</div>
+      <div class="pub-venue">Findings of EMNLP 2025</div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title">
+        <a href="https://scholar.google.com/citations?user=XApspCQAAAAJ" target="_blank">Findings of the WMT25 Multilingual Instruction Shared Task</a>
+      </div>
+      <div class="pub-authors">T. Kocmi, S. Agrawal, E. Artemova, E. Avramidis, E. Briakou, P. Chen, M. Fadaee, M. Freitag, R. Grundkiewicz, Y. Hou, P. Koehn, J. Kreutzer, S. Mansour, S. Perrella, L. Proietti, P. Riley, E. Sánchez, <strong>P. Schmidtová</strong>, M. Shmatova, V. Zouhar</div>
+      <div class="pub-venue">Proceedings of WMT25, pp. 414–435</div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title">
+        <a href="https://scholar.google.com/citations?user=XApspCQAAAAJ" target="_blank">ReproHum #0669-08: Reproducing Sentiment Transfer Evaluation</a>
+      </div>
+      <div class="pub-authors">K. Onderková, M. Lango, <strong>P. Schmidtová</strong>, O. Dušek</div>
+      <div class="pub-venue">4th Workshop on Generation, Evaluation and Metrics (GEM) @ ACL 2025</div>
+    </div>
+  </div>
+
+  <div class="year-group">
+    <div class="year-label">2024</div>
+
+    <div class="pub">
+      <div class="pub-title">
+        <a href="https://scholar.google.com/citations?user=XApspCQAAAAJ" target="_blank">Leak, Cheat, Repeat: Data Contamination and Evaluation Malpractices in Closed-Source LLMs</a>
+        <span class="pub-badge">Best Paper · EACL 2024</span>
+      </div>
+      <div class="pub-authors">S. Balloccu, <strong>P. Schmidtová</strong>, M. Lango, O. Dušek</div>
+      <div class="pub-venue">EACL 2024</div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title">
+        <a href="https://scholar.google.com/citations?user=XApspCQAAAAJ" target="_blank">Automatic Metrics in Natural Language Generation: A Survey of Current Evaluation Practices</a>
+        <span class="pub-badge">Best Evaluation Paper · INLG 2024</span>
+      </div>
+      <div class="pub-authors"><strong>P. Schmidtová</strong>, S. Mahamood, S. Balloccu, O. Dušek, A. Gatt, D. Gkatzia, D.M. Howcroft, O. Plátek, A. Sivaprasad</div>
+      <div class="pub-venue">INLG 2024</div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title">
+        <a href="https://scholar.google.com/citations?user=XApspCQAAAAJ" target="_blank">factgenie: A Framework for Span-Based Evaluation of Generated Texts</a>
+      </div>
+      <div class="pub-authors">Z. Kasner, O. Plátek, <strong>P. Schmidtová</strong>, S. Balloccu, O. Dušek</div>
+      <div class="pub-venue">INLG 2024 (demo)</div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title">
+        <a href="https://scholar.google.com/citations?user=XApspCQAAAAJ" target="_blank">ReproHum #0043-4: Evaluating Summarization Models — Impact of Education and Language Proficiency on Reproducibility</a>
+      </div>
+      <div class="pub-authors">M. Lango, <strong>P. Schmidtová</strong>, S. Balloccu, O. Dušek</div>
+      <div class="pub-venue">4th Workshop on Human Evaluation of NLP Systems (HumEval), 2024</div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title">
+        <a href="https://scholar.google.com/citations?user=XApspCQAAAAJ" target="_blank">THEaiTRE: Generating Theatre Play Scripts Using Artificial Intelligence</a>
+      </div>
+      <div class="pub-authors"><strong>P. Schmidtová</strong></div>
+      <div class="pub-venue">Thesis, Institute of Formal and Applied Linguistics, 2024</div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title">
+        <a href="https://scholar.google.com/citations?user=XApspCQAAAAJ" target="_blank">Faithfulness of Natural Language Generation</a>
+      </div>
+      <div class="pub-authors"><strong>P. Schmidtová</strong></div>
+      <div class="pub-venue">20th Young Researchers' Roundtable on Spoken Dialogue Systems (YRRSDS), 2024</div>
+    </div>
+  </div>
+
+  <div class="year-group">
+    <div class="year-label">2022–2023</div>
+
+    <div class="pub">
+      <div class="pub-title">
+        <a href="https://scholar.google.com/citations?user=XApspCQAAAAJ" target="_blank">GPT-2-Based Human-in-the-Loop Theatre Play Script Generation</a>
+      </div>
+      <div class="pub-authors">R. Rosa, <strong>P. Schmidtová</strong>, O. Dušek, T. Musil, D. Mareček, S. Obaid, M. Nováková, K. Vosecká, J. Doležal</div>
+      <div class="pub-venue">4th Workshop on Narrative Understanding (WNU2022), pp. 29–37</div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title">
+        <a href="https://scholar.google.com/citations?user=XApspCQAAAAJ" target="_blank">Three Ways of Using Large Language Models to Evaluate Chat</a>
+      </div>
+      <div class="pub-authors">O. Plátek, V. Hudeček, <strong>P. Schmidtová</strong>, M. Lango, O. Dušek</div>
+      <div class="pub-venue">DSTC 2023</div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title">
+        <a href="https://scholar.google.com/citations?user=XApspCQAAAAJ" target="_blank">Dialoguescript: Using Dialogue Agents to Produce a Script</a>
+      </div>
+      <div class="pub-authors"><strong>P. Schmidtová</strong>, D. Javorský, C. Mikláš, T. Musil, R. Rosa, O. Dušek</div>
+      <div class="pub-venue">arXiv:2206.08425, 2022</div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title">
+        <a href="https://scholar.google.com/citations?user=XApspCQAAAAJ" target="_blank">Semantic Accuracy in Natural Language Generation: A Thesis Proposal</a>
+      </div>
+      <div class="pub-authors"><strong>P. Schmidtová</strong></div>
+      <div class="pub-venue">ACL Student Research Workshop, 2023</div>
+    </div>
+  </div>
+
+  <div class="year-group">
+    <div class="year-label">2020–2021</div>
+
+    <div class="pub">
+      <div class="pub-title">
+        <a href="https://scholar.google.com/citations?user=XApspCQAAAAJ" target="_blank">THEaiTRE 1.0: Interactive Generation of Theatre Play Scripts</a>
+      </div>
+      <div class="pub-authors">R. Rosa, T. Musil, O. Dušek, D. Jurko, <strong>P. Schmidtová</strong>, D. Mareček, O. Bojar, T. Kocmi, D. Hrbek, D. Košťák, M. Kinská, M. Nováková, J. Doležal, K. Vosecká, T. Studeník, P. Žabka</div>
+      <div class="pub-venue">arXiv:2102.08892, 2021</div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title">
+        <a href="https://scholar.google.com/citations?user=XApspCQAAAAJ" target="_blank">THEaiTRE: Artificial Intelligence to Write a Theatre Play</a>
+      </div>
+      <div class="pub-authors">R. Rosa, O. Dušek, T. Kocmi, D. Mareček, T. Musil, <strong>P. Schmidtová</strong>, D. Jurko, O. Bojar, D. Hrbek, D. Košťák, M. Kinská, J. Doležal, K. Vosecká</div>
+      <div class="pub-venue">arXiv:2006.14668, 2020</div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title">
+        <a href="https://scholar.google.com/citations?user=XApspCQAAAAJ" target="_blank">A Chatbot for the Banking Domain</a>
+      </div>
+      <div class="pub-authors"><strong>P. Schmidtová</strong></div>
+      <div class="pub-venue">Bachelor's thesis, Charles University, 2019</div>
+    </div>
+  </div>
+
+  <p class="scholar-link">Full list on <a href="https://scholar.google.com/citations?user=XApspCQAAAAJ&hl=en" target="_blank">Google Scholar</a>.</p>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-name">Patrícia Schmidtová</div>
+    <div class="footer-links">
+      <a href="https://scholar.google.com/citations?user=XApspCQAAAAJ&hl=en" target="_blank">Scholar</a>
+      <a href="https://github.com/patuchen" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/patricia-schmidtova/" target="_blank">LinkedIn</a>
+      <a href="#" id="footer-email">Email</a>
+    </div>
+  </div>
+</footer>
+<script>(function(){var e=document.getElementById('footer-email');var u='patricia.schmidtova',d='gmail.com';e.href='mailto:'+u+'@'+d;})();</script>
+</body>
+</html>
