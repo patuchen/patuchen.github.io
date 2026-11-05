@@ -117,9 +117,7 @@ footer { border-top: 1px solid var(--border); background: var(--bg-alt); }
 .poster-img {
   display: block;
   width: 100%;
-  aspect-ratio: 3/4;
-  object-fit: cover;
-  object-position: top;
+  height: auto;
   background: var(--rose-light);
   cursor: pointer;
 }
@@ -145,8 +143,8 @@ footer { border-top: 1px solid var(--border); background: var(--bg-alt); }
 .poster-venue {
   font-size: 12px; font-style: italic; color: var(--text-light);
 }
+.poster-links { display: flex; gap: 16px; margin-top: 10px; }
 .poster-link {
-  display: inline-block; margin-top: 10px;
   font-size: 12px; color: var(--rose-dark);
   text-decoration: none;
 }
@@ -192,7 +190,7 @@ footer { border-top: 1px solid var(--border); background: var(--bg-alt); }
       <a href="news.html">News</a>
       <a href="Schmidtova_CV.pdf">CV</a>
       <!-- <span class="nav-blog">Talks</span> -->
-      <span class="nav-blog">Blog</span>
+      <!-- <span class="nav-blog">Blog</span> -->
     </div>
   </div>
 </nav>
@@ -205,16 +203,29 @@ footer { border-top: 1px solid var(--border); background: var(--bg-alt); }
 
   <div class="poster-grid">
 
-    <!-- Add poster cards below. Template:
     <div class="poster-card">
-      <img class="poster-img" src="posters/your-poster.pdf" alt="Poster for Your Paper Title" onclick="openLightbox(this.src)">
+      <img class="poster-img" src="posters/justify-your-prompts-thumb.jpg" data-full="posters/justify-your-prompts.jpg" alt="Poster: Justify Your Prompts!" loading="lazy" onclick="openLightbox(this.dataset.full, this.alt)">
       <div class="poster-meta">
-        <div class="poster-title">Your Paper Title</div>
-        <div class="poster-venue">Conference Name, Year</div>
-        <a class="poster-link" href="https://..." target="_blank">↗ Paper</a>
+        <div class="poster-title">Justify Your Prompts!</div>
+        <div class="poster-venue">Last Words, Computational Linguistics 2026</div>
+        <div class="poster-links">
+          <a class="poster-link" href="posters/justify-your-prompts.pdf" target="_blank">PDF</a>
+          <a class="poster-link" href="https://aclanthology.org/2026.cl-3.12/" target="_blank">Paper</a>
+        </div>
       </div>
     </div>
-    -->
+
+    <div class="poster-card">
+      <img class="poster-img" src="posters/never-truly-out-of-fashion-thumb.jpg" data-full="posters/never-truly-out-of-fashion.jpg" alt="Poster: Never Truly Out of Fashion: A Retrospective Look at Evaluation in NLG" loading="lazy" onclick="openLightbox(this.dataset.full, this.alt)">
+      <div class="poster-meta">
+        <div class="poster-title">Never Truly Out of Fashion: A Retrospective Look at Evaluation in NLG</div>
+        <div class="poster-venue">1st Symposium on Natural Language Generation Evaluations, 2026</div>
+        <div class="poster-links">
+          <a class="poster-link" href="posters/never-truly-out-of-fashion.pdf" target="_blank">PDF</a>
+          <a class="poster-link" href="https://aclanthology.org/2026.retroeval-main.8/" target="_blank">Paper</a>
+        </div>
+      </div>
+    </div>
 
   </div>
 </div>
@@ -238,8 +249,9 @@ footer { border-top: 1px solid var(--border); background: var(--bg-alt); }
 </footer>
 
 <script>
-function openLightbox(src) {
-  document.getElementById('lightbox-img').src = src;
+function openLightbox(src, alt) {
+  var im = document.getElementById('lightbox-img');
+  im.src = src; im.alt = alt || '';
   document.getElementById('lightbox').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
