@@ -107,24 +107,16 @@ footer { border-top: 1px solid var(--border); background: var(--bg-alt); }
 }
 .news-list { display: flex; flex-direction: column; }
 .news-item {
-  display: grid; grid-template-columns: 110px 1fr;
-  gap: 28px; padding: 22px 0;
+  display: block; padding: 22px 0;
   border-bottom: 1px solid var(--rose-light);
-  align-items: baseline;
 }
 .news-item:first-child { padding-top: 0; }
 .news-item:last-child { border-bottom: none; }
-.news-date {
-  font-family: 'Barlow', sans-serif; font-size: 12px;
-  font-weight: 600; letter-spacing: .06em;
-  color: var(--rose); text-transform: uppercase; padding-top: 1px;
-}
 .news-text { font-size: 15px; color: var(--text-mid); line-height: 1.65; }
 .news-text a { color: var(--rose-dark); }
 .news-text strong { color: var(--text); font-weight: 500; }
 @media (max-width: 680px) {
   .news-page { padding: 40px 20px; }
-  .news-item { grid-template-columns: 1fr; gap: 6px; }
 }
 
 </style>
@@ -150,37 +142,30 @@ footer { border-top: 1px solid var(--border); background: var(--bg-alt); }
   <div class="news-list">
 
     <div class="news-item">
-      <div class="news-date">2026</div>
       <div class="news-text">I'm co-chairing the <strong>Student Research Workshop</strong> at EACL 2027. See you in Athens!</div>
     </div>
 
     <div class="news-item">
-      <div class="news-date">&nbsp;</div>
       <div class="news-text">Happy to announce that the <strong>GEM Workshop</strong> has been accepted and will take place at ACL 2027!</div>
     </div>
 
     <div class="news-item">
-      <div class="news-date">&nbsp;</div>
       <div class="news-text">I led the <strong>WMT 2026 Multilingual Instruction Shared Task</strong>: 24 languages, 3 tasks and 8 participating teams.</div>
     </div>
 
     <div class="news-item">
-      <div class="news-date">&nbsp;</div>
       <div class="news-text">I spent the summer at the <strong>JSALT Workshop</strong> at Johns Hopkins, building metrics and an LLM-as-judge pipeline to test spoken dialogue models.</div>
     </div>
 
     <div class="news-item">
-      <div class="news-date">&nbsp;</div>
       <div class="news-text">I co-led a tutorial on <strong>human evaluation of multilingual tasks</strong> at EAMT, KONVENS and the MT Marathon.</div>
     </div>
 
     <div class="news-item">
-      <div class="news-date">&nbsp;</div>
       <div class="news-text">I co-organized the <strong>GEM Workshop</strong> at ACL 2026.</div>
     </div>
 
     <div class="news-item">
-      <div class="news-date">&nbsp;</div>
       <div class="news-text">Two papers from students I supervised were accepted at <strong>INLG 2026</strong>, and I'm very proud of them.</div>
     </div>
 
