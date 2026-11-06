@@ -3,8 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Patrícia Schmidtová — PhD researcher in NLP at Charles University, specialising in LLM evaluation, hallucination detection, and NLG reliability.">
-<title>Patrícia Schmidtová</title>
+<meta name="description" content="Patrícia Schmidtová — PhD researcher in NLP at Charles University, specializing in LLM evaluation, hallucination detection, and NLG reliability.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Patrícia Schmidtová">
+<meta property="og:description" content="NLP researcher working on LLM evaluation and reliability at Charles University.">
+<meta property="og:url" content="https://patuchen.github.io/">
+<meta property="og:image" content="https://patuchen.github.io/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<title>Patrícia Schmidtová — NLP researcher, LLM evaluation</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
@@ -14,7 +21,7 @@
 :root {
   --bg:         #fdf5f5;
   --bg-alt:     #f9eeee;
-  --rose:       #c06070;
+  --rose:       #ab4659;
   --rose-dark:  #8b3a3a;
   --rose-light: #f0d8d8;
   --border:     #e8d5d5;
@@ -85,7 +92,16 @@ footer { border-top: 1px solid var(--border); background: var(--bg-alt); }
 
 @media (max-width: 680px) {
   .nav-inner { padding: 0 20px; }
-  .nav-links a, .nav-blog { padding: 6px 9px; font-size: 13px; }
+  .nav-name { font-size: 15px; white-space: nowrap; }
+  .nav-links a, .nav-blog { padding: 6px 7px; font-size: 13px; }
+  .footer-inner { padding: 24px 20px; }
+  .footer-links { flex-wrap: wrap; gap: 8px 16px; }
+}
+@media (max-width: 400px) {
+  .nav-inner { padding: 0 16px; }
+  .nav-name { font-size: 14px; }
+  .nav-links { gap: 0; }
+  .nav-links a, .nav-blog { padding: 6px 5px; font-size: 12.5px; }
 }
 
 
@@ -127,7 +143,7 @@ footer { border-top: 1px solid var(--border); background: var(--bg-alt); }
 }
 @media (max-width: 680px) {
   #about { grid-template-columns: 1fr; gap: 28px; padding: 48px 20px; }
-  .hero-photo { width: 150px; height: 183px; }
+  .hero-photo { width: 120px; height: 146px; order: -1; margin-top: 0; }
   .hero-name { font-size: 40px; }
 }
 
@@ -175,10 +191,10 @@ footer { border-top: 1px solid var(--border); background: var(--bg-alt); }
       <a href="https://scholar.google.com/citations?user=XApspCQAAAAJ&hl=en" target="_blank">Scholar</a>
       <a href="https://github.com/patuchen" target="_blank">GitHub</a>
       <a href="https://www.linkedin.com/in/patricia-schmidtova/" target="_blank">LinkedIn</a>
-      <a href="#" class="footer-email-js">Email</a>
+      <a href="#" class="footer-email-js" data-show="1">Email</a><noscript> patricia dot schmidtova at gmail dot com</noscript>
     </div>
   </div>
 </footer>
-<script>(function(){var u='patricia.schmidtova',d='gmail.com';document.querySelectorAll('.footer-email-js').forEach(function(e){e.href='mailto:'+u+'@'+d;});})();</script>
+<script>(function(){var u='patricia.schmidtova',d='gmail.com',a=u+'@'+d;document.querySelectorAll('.footer-email-js').forEach(function(e){e.href='mailto:'+a;if(e.dataset.show){e.textContent=a;}});})();</script>
 </body>
 </html>
